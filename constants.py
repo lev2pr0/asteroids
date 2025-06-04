@@ -1,5 +1,4 @@
 # Screen dimensions and constants
-from mypyc.common import PLATFORM_SIZE
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 BLACK = (0,   0,   0)
