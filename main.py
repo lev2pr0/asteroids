@@ -25,10 +25,16 @@ def gameloop():
                 return
 
         pygame.Surface.fill(screen, BLACK)
-        Player.draw(player, screen)
+
+        for player in drawable:
+            player.draw(screen)
+
         pygame.display.flip()
         dt = clock.tick(60)/1000
-        player.update(dt)
+
+        for player in updatable:
+            player.update(dt)
+
 
 # main function to:
 # - initialize pygame
@@ -50,6 +56,11 @@ if __name__ == "__main__":
 
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
+
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+
+    Player.containers = (updatable, drawable)
 
     player = Player(x, y, PLAYER_RADIUS)
 
