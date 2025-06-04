@@ -1,10 +1,13 @@
 # Screen dimensions and constants
+from mypyc.common import PLATFORM_SIZE
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 BLACK = (0,   0,   0)
 
 # Player constants
 PLAYER_RADIUS = 20
+PLAYER_TURN_SPEED = 300
+PLAYER_SPEED = 200
 
 # Asteroid constants
 ASTEROID_MIN_RADIUS = 20
