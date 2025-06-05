@@ -1,17 +1,15 @@
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
 import pygame
-
-# this allows us to use code from
-# the constants & player (Player class) modules
-# through out this file
 from constants import *
 from player import Player
+from asteroid import Asteroid
+from asteroidfield import AsteroidField
 
 # variables for game loop
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 clock = pygame.time.Clock()
+updatable = pygame.sprite.Group()
+drawable = pygame.sprite.Group()
+asteroids = pygame.sprite.Group()
 
 # gameloop function to:
 # - handle events
@@ -26,15 +24,15 @@ def gameloop():
 
         pygame.Surface.fill(screen, BLACK)
 
-        for player in drawable:
-            player.draw(screen)
+        for object in drawable:
+            object.draw(screen)
 
         pygame.display.flip()
         dt = clock.tick(60)/1000
 
-        for player in updatable:
-            player.update(dt)
-
+        for object in updatable:
+            #print("AsteroidField updating")
+            object.update(dt)
 
 # main function to:
 # - initialize pygame
@@ -57,11 +55,11 @@ if __name__ == "__main__":
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
 
-    updatable = pygame.sprite.Group()
-    drawable = pygame.sprite.Group()
-
     Player.containers = (updatable, drawable)
+    Asteroid.containers = (asteroids, updatable, drawable)
+    AsteroidField.containers = updatable
 
     player = Player(x, y, PLAYER_RADIUS)
+    asteroid_field = AsteroidField()
 
     main()

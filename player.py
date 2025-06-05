@@ -1,11 +1,4 @@
-# this allows us to use code from
-# the open-source pygame library
-# throughout this file
 import pygame
-
-# this allows us to use code from
-# the constants & circleshape (CircleShape class) modules
-# through out this file
 from constants import *
 from circleshape import CircleShape
 
