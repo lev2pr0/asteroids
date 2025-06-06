@@ -1,6 +1,5 @@
 import pygame
 from circleshape import CircleShape
-from ctypes import pydll
 
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
