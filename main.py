@@ -1,8 +1,10 @@
 import pygame
+import sys
 from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from circleshape import CircleShape
 
 # variables for game loop
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -31,8 +33,12 @@ def gameloop():
         dt = clock.tick(60)/1000
 
         for object in updatable:
-            #print("AsteroidField updating")
             object.update(dt)
+
+        for object in asteroids:
+            if CircleShape.collide(player, object) == True:
+                sys.exit("Game over!")
+
 
 # main function to:
 # - initialize pygame
