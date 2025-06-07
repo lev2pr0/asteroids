@@ -13,8 +13,8 @@ For more, see [Boot.dev Achievements](https://github.com/lev2pr0/bootdotdevAchie
 ## Installation 
 
 1. Fork from the ``main`` branch
-2. Download and open .zip from your forked repository
-3. Navigate to directory of opened .zip in terminal; Example: `cd ~/user/downloads`
+2. Download and extract .zip from your forked repository
+3. Navigate to directory of extracted .zip in terminal; Example: `cd ~/user/downloads`
 4. Create a virtual environment at the top level of your directory:
 ```python
 python3 -m venv venv
