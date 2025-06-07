@@ -38,9 +38,16 @@ def gameloop():
         for object in updatable:
             object.update(dt)
 
-        for object in asteroids:
-            if CircleShape.collide(player, object) == True:
+        for asteroid in asteroids:
+            if CircleShape.collide(player, asteroid) == True:
                 sys.exit("Game over!")
+
+        for asteroid in asteroids:
+            for shot in shots:
+                if Shot.collide(shot, asteroid) == True:
+                    asteroid.kill()
+                    shot.kill()
+
 
 
 # main function to:
