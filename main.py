@@ -45,7 +45,7 @@ def gameloop():
         for asteroid in asteroids:
             for shot in shots:
                 if Shot.collide(shot, asteroid) == True:
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill()
 
 
