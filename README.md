@@ -4,8 +4,8 @@
 
 Asteroids is a [Boot.dev](https://www.boot.dev) project! I built a simple video game, based on the classic [Asteroids](https://en.wikipedia.org/wiki/Asteroids_(video_game)). If you've never played before, you can take a look at this [version of the game](https://www.echalk.co.uk/amusements/Games/asteroidsClassic/ateroids.html). The learning goals of this project are:
 
-- Introduce you to multi-file Python projects
-- Show you a real-world use case for object-oriented programming
+- Introduction to multi-file Python projects
+- Real-world use case for object-oriented programming
 - To have a ton of fun building a rewarding project!
 
 For more, see [Boot.dev Achievements](https://github.com/lev2pr0/bootdotdevAchievements)
